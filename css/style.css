@@ -1,0 +1,34 @@
+/*
+Reppier management system
+Design and code - M82.eu
+*/
+/* 
+    Created on : 06.11.2015, 7:39:30
+    Author     : Messier82
+*/
+
+//MD icons sizes
+.material-icons.tiny {
+    font-size: 1rem;
+}
+.material-icons.small {
+    font-size: 2rem;
+}
+.material-icons.medium {
+    font-size: 3rem;
+}
+.material-icons.large {
+    font-size: 4rem;
+}
+
+.parallax-container {
+    height: 250px;
+}
+
+.parallax-container img {
+    display: block; 
+}
+
+body {
+    height: 1500px;
+}

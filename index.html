@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="Reppier" ng-controller="MainController">
+    <head>
+        <title>{{ Page.title()}}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link type="text/css" rel="stylesheet" href="../materialize/css/materialize.min.css"  media="screen,projection"/>
+
+        <link type="text/css" rel="stylesheet" href="../css/style.css" />
+
+        <script src="../js/jquery-2.1.4.min.js"></script>
+        <script src="../js/angular.min.js"></script>
+        <script src="../materialize/js/materialize.min.js"></script>
+
+        <script src="../js/main.js"></script>
+    </head>
+    <body>
+
+        <header>
+            <nav class="blue">
+                <div class="row">
+                    <div class="col offset-l2 l8 offset-m1 m10 s12">
+                            {{ Page.title()}}
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="parallax-container">
+            <div class="parallax"><img src="../img/background-min2.jpg"></div>
+        </div>
+
+        <!--Angular dependecies-->
+        <!--Controllers-->
+        <script src="../js/controllers/MainController.js"></script>
+    </body>
+</html>
