@@ -33,6 +33,11 @@ body {
     display: block; 
 }
 
+/*Styles*/
+.subNav {
+    height: 36px;
+}
+
 /*Basic styles*/
 .projectTitle {
     font-size: 1.5rem;

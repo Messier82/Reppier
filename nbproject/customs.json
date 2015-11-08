@@ -1,7 +1,8 @@
 {
     "elements": {
         "nav-bar": {},
-        "style": {}
+        "style": {},
+        "register-form": {}
     },
     "attributes": {}
 }
