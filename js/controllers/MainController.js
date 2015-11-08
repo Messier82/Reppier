@@ -14,7 +14,14 @@ mainModule.factory('Page', function () {
     };
 });
 
-mainModule.controller('MainController', ['$scope', 'Page',
+var MainController = mainModule.controller('MainController', ['$scope', 'Page',
     function ($scope, Page) {
         $scope.Page = Page;
     }]);
+
+MainController.directive("navBar", function(){
+    return {
+        restrict: 'E',
+        templateUrl: "../views/navbar.html"
+    };
+});

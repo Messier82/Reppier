@@ -6,6 +6,9 @@ Design and code - M82.eu
     Created on : 06.11.2015, 7:39:30
     Author     : Messier82
 */
+body {
+    height: 1500px; /*just for testing*/
+}
 
 //MD icons sizes
 .material-icons.tiny {
@@ -21,6 +24,7 @@ Design and code - M82.eu
     font-size: 4rem;
 }
 
+/*Parallax setup*/
 .parallax-container {
     height: 250px;
 }
@@ -29,6 +33,8 @@ Design and code - M82.eu
     display: block; 
 }
 
-body {
-    height: 1500px;
+/*Basic styles*/
+.projectTitle {
+    font-size: 1.5rem;
+    font-weight: 200;
 }
