@@ -22,6 +22,6 @@ var MainController = mainModule.controller('MainController', ['$scope', 'Page',
 MainController.directive("navBar", function(){
     return {
         restrict: 'E',
-        templateUrl: "../views/navbar.html"
+        templateUrl: "./views/navbar.html"
     };
 });
