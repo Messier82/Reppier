@@ -4,8 +4,8 @@
 
 <div class="right accountPanel">
     <div class="tabletDesktop">
-        <a class="blue lighten-2 waves-effect waves-light btn" style="color: black;">Login</a>
-        <a class="white waves-effect btn modal-trigger" href="#register" style="color: black;">Register</a>
+        <a class="white waves-effect btn" style="color: black;">Login</a>
+        <a class="amber waves-effect waves-light btn" href="#/register" style="color: black;">Register</a>
     </div>
     <div class="phones" style="display: none;">
         <a class="blue lighten-2 waves-effect waves-light btn dropdown-button" data-activates="accountPanelDropdown" style="color: black;">Account</a>
@@ -28,12 +28,6 @@
     }
 </style>
 
-<!-- Register modal -->
-<div id="register" class="modal" ng-controller="RegisterController">
-    <register-form></register-form>
-</div>
-
 <script>
     $('.dropdown-button').dropdown();
-    $('.modal-trigger').leanModal();
 </script>

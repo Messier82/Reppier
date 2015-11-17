@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Materialize v0.97.1 (http://materializecss.com)
  * Copyright 2014-2015 Materialize
  * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
@@ -1198,7 +1198,7 @@ $(document).ready(function(){
           $index = 0;
         }
         // Change url to current tab
-        // window.location.hash = $active.attr('href');
+        window.location.hash = $active.attr('href');
 
         $content.show();
 

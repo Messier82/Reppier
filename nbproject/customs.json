@@ -1,6 +1,7 @@
 {
     "elements": {
         "nav-bar": {},
+        "ng-view": {},
         "style": {},
         "register-form": {}
     },

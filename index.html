@@ -13,7 +13,8 @@
 
         <script src="../js/jquery-2.1.4.min.js"></script>
         <script src="../js/angular.min.js"></script>
-        <script src="../materialize/js/materialize.min.js"></script>
+        <script src="../js/angular-route.min.js"></script>
+        <script src="../materialize/js/materialize.js"></script>
 
         <script src="../js/main.js"></script>
     </head>
@@ -29,9 +30,9 @@
                 <div class="z-depth-1 blue darken-2 col s12">
                     <div class="col offset-l2 l8 offset-m1 m10 s12">
                         <ul style="color: white; background: transparent;" class="tabs">
-                            <li class="tab col l3"><a href="./" class="amber-text">Главная</a></li>
-                            <li class="tab col l3"><a href="./test" class="amber-text">Главная</a></li>
-                            <li class="tab col l3"><a href="./" class="amber-text">Главная</a></li>
+                            <li class="tab col l3"><a href="#home" class="amber-text">Главная</a></li>
+                            <li class="tab col l3"><a href="#test" class="amber-text">Артур</a></li>
+                            <li class="tab col l3"><a href="#test2" class="amber-text">Лалка</a></li>
                         </ul>
                     </div>
                 </div>
@@ -40,16 +41,14 @@
 
         <div class="parallax-container">
             <div class="parallax"><img src="../img/background-min2.jpg"></div>
+            <div class="row">
+                <div style="height: 100%;" class="col offset-l2 l8 offset-m1 m10 s12">test</div>
+            </div>
         </div>
         <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="first-name" type="text" />
-                        <label for="first-name">First name</label>
-                    </div>
-                </div>
-            </form>
+            <div class="col offset-l2 l8 offset-m1 m10 s12">
+                <ng-view></ng-view>
+            </div>
         </div>
 
         <!--Angular dependecies-->
