@@ -1,6 +1,10 @@
 {
     "elements": {
-        "nav-bar": {},
+        "nav-bar": {
+            "attributes": {
+                "class": {}
+            }
+        },
         "ng-view": {},
         "style": {},
         "register-form": {}
