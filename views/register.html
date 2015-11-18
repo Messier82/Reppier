@@ -1,31 +1,33 @@
+{{ Page.hideImageBar() }}
+{{ Page.setTitle("Registration"); Page.setNavbarTitle("Registration"); }}
+
 <div class="card">
     <div class="card-content row" style="color: black;">
-        <h4>Register</h4>
-        <div class="col m6 s12">
-            <span>First name:</span>
-            <input id="first_name" type="text" placeholder="" />
+        <div class="col m6 s12 input-field">
+            <input id="first_name" type="text" />
+            <label for="first_name">First name</label>
         </div>
-        <div class="col m6 s12">
-            <span>Last name:</span>
-            <input id="last_name" type="text" placeholder="" />
+        <div class="col m6 s12 input-field">
+            <input id="last_name" type="text" />
+            <label for="last_name">Last name</label>
         </div>
-        
-        <div class="col s12">
-            <span>E-Mail:</span>
-            <input id="email" type="text" placeholder="" />
-        </div>
-        
-        <div class="col s12">
-            <span>Password:</span>
-            <input id="password" type="password" placeholder="" />
-        </div>
-        
-        <div class="col s12">
-            <span>Repeat password</span>
-            <input id="repeat_password" type="password" placeholder="" />
-        </div>
-        
-        <center><a class="blue btn waves-effect waves-light black-text">Register</a></center>
 
+        <div class="col s12 input-field">
+            <input id="email" type="text" />
+            <label for="email">E-Mail</label>
+        </div>
+
+        <div class="col s12 input-field">
+            <input id="password" type="password" />
+            <label for="password">Password</label>
+        </div>
+
+        <div class="col s12 input-field">
+            <input id="repeat_password" type="password" />
+            <label for="repeat_password">Repeat password</label>
+        </div>
+    </div>
+    <div class="card-action">
+        <center><a class="blue lighten-1 btn waves-effect waves-light black-text">Register</a></center>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="Reppier" ng-controller="MainController">
     <head>
-        <title>{{ Page.title()}}</title>
+        <title>{{ Page.title() }}</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--Import Google Icon Font-->
@@ -21,29 +21,29 @@
     <body class="grey lighten-2">
 
         <header>
-            <div class="row" style="margin-bottom: 0;">
+            <div class="row z-depth-1" style="margin-bottom: 0;">
                 <nav class="blue">
-                    <div class="col offset-l2 l8 offset-m1 m10 s12">
+                    <div class="col l8 offset-l2 m10 offset-m1 s12">
                         <nav-bar class="navBar"></nav-bar>
                     </div>
                 </nav>
-                <div class="z-depth-1 blue darken-2 col s12">
-                    <div class="col offset-l2 l8 offset-m1 m10 s12">
+                <div class="blue col s12">
+                    <div class="col l8 offset-l2 m10 offset-m1 s12">
                         <ul style="color: white; background: transparent;" class="tabs">
-                            <li class="tab col l3"><a href="#home" class="amber-text">Главная</a></li>
-                            <li class="tab col l3"><a href="#test" class="amber-text">Артур</a></li>
-                            <li class="tab col l3"><a href="#test2" class="amber-text">Лалка</a></li>
+                            <li class="tab col l3 waves-effect waves-light"><a href="#home" class="white-text">Главная</a></li>
+                            <li class="tab col l3 waves-effect waves-light"><a href="#test" class="white-text">Артур</a></li>
+                            <li class="tab col l3 waves-effect waves-light"><a href="#test2" class="white-text">Лалка</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </header>
 
-        <div class="parallax-container">
+        <div class="parallax-container" id="imageBar">
             <div class="parallax"><img src="./img/background-min2.jpg" /></div>
         </div>
-        <div class="row" style="margin-top: -80px;">
-            <div class="col offset-l2 l8 offset-m1 m10 s12">
+        <div class="row" style="margin-top: -80px;" id="content">
+            <div class="col l8 offset-l2 m10 offset-m1 s12">
                 <ng-view></ng-view>
             </div>
         </div>
