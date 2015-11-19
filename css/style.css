@@ -52,3 +52,45 @@ ul.tabs div.indicator {
     background: white;
     transition: opacity .3s;
 }
+
+/*Checkbox galochka coloring*/
+[type="checkbox"]:checked + label:before {
+    border-right-color: #42a5f5;
+    border-bottom-color: #42a5f5;
+}
+
+/*Inputs coloring*/
+input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom-color: #42a5f5;
+}
+
+input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=url]:focus:not([readonly]) + label, input[type=time]:focus:not([readonly]) + label, input[type=date]:focus:not([readonly]) + label, input[type=datetime-local]:focus:not([readonly]) + label, input[type=tel]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label, input[type=search]:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #42a5f5;
+}
+
+/*Loading spinner positioning and stylizing*/
+.loading-bar-spinner {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    margin-left: -15px;
+    padding: 5px;
+    border-radius: 20px;
+    background: white;
+    height: 40px;
+      -webkit-transition: 350ms linear all;
+  -moz-transition: 350ms linear all;
+  -o-transition: 350ms linear all;
+  transition: 350ms linear all;
+}
+
+/*Loading spinner animation transitions*/
+#loading-bar-spinner.ng-enter,
+#loading-bar-spinner.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+#loading-bar-spinner.ng-enter.ng-enter-active,
+#loading-bar-spinner.ng-leave {
+  opacity: 1;
+}
