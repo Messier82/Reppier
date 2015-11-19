@@ -15,6 +15,10 @@ mainModule.config(function ($routeProvider) {
             .when("/register", {
                 templateUrl: "./views/register.html",
                 controller: "RegisterController"
+            })
+            .when("/login", {
+                templateUrl: "./views/login.html",
+                controller: "LoginController"
             });
 });
 

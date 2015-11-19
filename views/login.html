@@ -1,0 +1,29 @@
+{{ Page.hideImageBar(); Page.hideTabsIndicator(); }}
+{{ Page.setTitle('Sign in'); Page.setNavbarTitle('Sign in'); }}
+
+<div class="row">
+    <div class="col l8 offset-l2 m10 offset-m1 s12">
+        <div class="card">
+            <div class="card-content">
+                <div class="input-field">
+                    <input type="text" id="email" />
+                    <label for="email">E-Mail</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="password" />
+                    <label for="email">Password</label>
+                </div>
+                <input type="checkbox" id="remember" />
+                <label for="remember">Remember</label>
+                <center>
+                    Don't have an account? <a href="#register">Sign up!</a>
+                </center>
+            </div>
+            <div class="card-action" style="overflow: hidden;">
+                <div class="left">
+                    <a class="blue lighten-1 black-text btn waves-effect waves-default">Sign in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
