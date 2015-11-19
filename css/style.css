@@ -50,4 +50,5 @@ body {
 /*Tabs indicator coloring*/
 ul.tabs div.indicator {
     background: white;
+    transition: opacity .3s;
 }

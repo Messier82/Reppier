@@ -6,9 +6,3 @@
 var RegisterController = mainModule.controller("RegisterController", ["$scope", function ($scope) {
 
     }]);
-
-RegisterController.directive("registerForm", function(){
-    return {
-        templateUrl: "../views/register.html"
-    };
-});

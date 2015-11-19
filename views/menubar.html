@@ -1,0 +1,13 @@
+<div class="blue col s12">
+    <div class="col l8 offset-l2 m10 offset-m1 s12">
+        <ul style="color: white; background: transparent;" class="tabs">
+            <div ng-repeat="item in items">
+                <li class="tab waves-effect waves-light" style="width: 110px;"><a href="{{ item.url}}" class="white-text">{{ item.name}}</a></li>
+            </div>
+        </ul>
+    </div>
+</div>
+
+<script>
+    $('ul.tabs').tabs();
+</script>

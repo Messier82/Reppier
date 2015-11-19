@@ -1,4 +1,4 @@
-{{ Page.hideImageBar() }}
+{{ Page.hideImageBar(); Page.hideTabsIndicator() }}
 {{ Page.setTitle("Registration"); Page.setNavbarTitle("Registration"); }}
 
 <div class="card">
@@ -17,14 +17,19 @@
             <label for="email">E-Mail</label>
         </div>
 
-        <div class="col s12 input-field">
+        <div class="col m6 s12 input-field">
             <input id="password" type="password" />
             <label for="password">Password</label>
         </div>
 
-        <div class="col s12 input-field">
+        <div class="col m6 s12 input-field">
             <input id="repeat_password" type="password" />
             <label for="repeat_password">Repeat password</label>
+        </div>
+        
+        <div class="col s12 input-field">
+            <input id="phone_number" type="text" />
+            <label for="phone_number">Phone number</label>
         </div>
     </div>
     <div class="card-action">

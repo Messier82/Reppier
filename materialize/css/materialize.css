@@ -5741,7 +5741,7 @@ small {
   .card .card-action {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
     padding: 20px; }
-    .card .card-action a {
+    .card .card-action a:not(.btn, .btn-large, .btn-floating) {
       color: #ffab40;
       margin-right: 20px;
       -webkit-transition: color .3s ease;
@@ -5750,7 +5750,7 @@ small {
       -ms-transition: color .3s ease;
       transition: color .3s ease;
       text-transform: uppercase; }
-      .card .card-action a:hover {
+      .card .card-action a:not(.btn, .btn-large, .btn-floating):hover {
         color: #ffd8a6; }
   .card .card-reveal {
     padding: 20px;
@@ -5838,6 +5838,8 @@ small {
   display: -webkit-flex;
   display: flex;
   position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
   height: 48px;
   background-color: #fff;
   margin: 0 auto;
@@ -5884,21 +5886,6 @@ small {
     height: 2px;
     background-color: #f6b2b5;
     will-change: left, right; }
-
-.hide-tab-scrollbar {
-  position: relative;
-  height: 48px;
-  overflow: hidden; }
-  .hide-tab-scrollbar .tabs {
-    overflow-x: scroll;
-    overflow-y: hidden; }
-
-.scrollbar-measure {
-  width: 100px;
-  height: 100px;
-  overflow: scroll;
-  position: absolute;
-  top: -9999px; }
 
 .material-tooltip {
   padding: 10px 8px;
@@ -7774,6 +7761,34 @@ select {
       border-radius: 50%; }
       .slider .indicators .indicator-item.active {
         background-color: #4CAF50; }
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  perspective: 500px;
+  -webkit-perspective: 500px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-origin: 0% 50%; }
+  .carousel .carousel-item {
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 0; }
+    .carousel .carousel-item img {
+      width: 100%; }
+  .carousel.carousel-slider {
+    top: 0;
+    left: 0;
+    height: 0; }
+    .carousel.carousel-slider .carousel-item {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0; }
 
 /* ==========================================================================
    $BASE-PICKER

@@ -13,11 +13,11 @@ mainModule.config(function ($routeProvider) {
                 templateUrl: "./views/home.html"
             })
             .when("/register", {
-                templateUrl: "./views/register.html"
+                templateUrl: "./views/register.html",
+                controller: "RegisterController"
             });
 });
 
 $(document).ready(function () {
     $('.parallax').parallax();
-    $('ul.tabs').tabs();
 });

@@ -28,10 +28,17 @@ mainModule.factory('Page', function () {
         showImageBar: function () {
             $("#imageBar").show();
             $("#content").css("margin-top", "-80px");
+            $('.parallax').parallax();
         },
         hideImageBar: function () {
             $("#imageBar").hide();
             $("#content").css("margin-top", "20px");
+        },
+        showTabsIndicator: function () {
+            $("ul.tabs div.indicator").css("opacity", "1");
+        },
+        hideTabsIndicator: function () {
+            $("ul.tabs div.indicator").css("opacity", "0");
         }
     };
 });
@@ -43,7 +50,13 @@ var MainController = mainModule.controller('MainController', ['$scope', 'Page',
 
 MainController.directive("navBar", function () {
     return {
-        restrict: 'E',
         templateUrl: "./views/navbar.html"
+    };
+});
+
+MainController.directive("menuBar", function () {
+    return {
+        templateUrl: "./views/menubar.html",
+        controller: "MenuBarController"
     };
 });

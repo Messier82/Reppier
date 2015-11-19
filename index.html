@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="Reppier" ng-controller="MainController">
     <head>
-        <title>{{ Page.title() }}</title>
+        <title>{{ Page.title()}}</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <!--Import Google Icon Font-->
-        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
 
-        <link type="text/css" rel="stylesheet" href="./materialize/css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="./materialize/css/materialize.css"  media="screen,projection"/>
 
         <link type="text/css" rel="stylesheet" href="./css/style.css" />
 
@@ -22,20 +22,8 @@
 
         <header>
             <div class="row z-depth-1" style="margin-bottom: 0;">
-                <nav class="blue">
-                    <div class="col l8 offset-l2 m10 offset-m1 s12">
-                        <nav-bar class="navBar"></nav-bar>
-                    </div>
-                </nav>
-                <div class="blue col s12">
-                    <div class="col l8 offset-l2 m10 offset-m1 s12">
-                        <ul style="color: white; background: transparent;" class="tabs">
-                            <li class="tab col l3 waves-effect waves-light"><a href="#home" class="white-text">Главная</a></li>
-                            <li class="tab col l3 waves-effect waves-light"><a href="#test" class="white-text">Артур</a></li>
-                            <li class="tab col l3 waves-effect waves-light"><a href="#test2" class="white-text">Лалка</a></li>
-                        </ul>
-                    </div>
-                </div>
+                <nav-bar class="navBar"></nav-bar>
+                <menu-bar></menu-bar>
             </div>
         </header>
 
@@ -52,5 +40,6 @@
         <!--Controllers-->
         <script src="./js/controllers/MainController.js"></script>
         <script src="./js/controllers/RegisterController.js"></script>
+        <script src="./js/controllers/MenuBarController.js"></script>
     </body>
 </html>
