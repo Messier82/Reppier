@@ -29,4 +29,7 @@ mainModule.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
 
 $(document).ready(function () {
     $('.parallax').parallax();
+    jQuery.extend(jQuery.validator.messages, {
+        required: " "
+    });
 });

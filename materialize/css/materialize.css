@@ -6469,7 +6469,7 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
     display: block;
     content: "";
     position: absolute;
-    top: 65px;
+    top: 60px; /*Changed from 65px to 60px for better looking */
     opacity: 0;
     transition: .2s opacity ease-out, .2s color ease-out; }
 
