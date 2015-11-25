@@ -17,10 +17,12 @@ function initValidate() {
             },
             "last-name": {
                 required: true,
-                rangelength: [2, 20]
+                minlength: 2,
+                maxlength: 20
             },
             "email": {
                 required: true,
+                maxlength: 30,
                 email: true
             },
             "password": {
@@ -31,6 +33,12 @@ function initValidate() {
             "repeat-password": {
                 required: true,
                 equalTo: "#password"
+            },
+            "phone-number": {
+                required: true,
+                minlength: 8,
+                maxlength: 15,
+                digits: true
             }
         },
         success: function (label, element) {

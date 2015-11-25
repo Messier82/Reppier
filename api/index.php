@@ -4,9 +4,20 @@ require 'vendor/autoload.php';
 // Create and configure Slim app
 $app = new \Slim\App;
 
+//Autoload custom classes
+include_once("load.php");
+
 // Define app routes
-$app->get('/hello/{name}', function ($request, $response, $args) {
-    return $response->write("Hello " . $args['name']);
+$app->get('/user/logincheck', function ($request, $response, $args) {
+    $user = new User();
+    $vars = [
+        "email" => "newvar",
+        "password" => "wrongpass",
+    ];
+    $user->setAttributes($vars);
+    $user->save();
+    var_dump($user);
+    //return $response->write("Hello " . $args['name']);
 });
 
 // Run app
