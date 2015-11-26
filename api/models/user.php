@@ -4,4 +4,10 @@
 
 class User extends Model {
     public $tableName = "users";
+    
+    public function rules() {
+        return [
+            
+        ];
+    }
 }

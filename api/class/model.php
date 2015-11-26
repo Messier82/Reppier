@@ -157,6 +157,18 @@ class Model {
         
         return $values;
     }
+    
+    public function rules() {
+        return array();
+    }
+    
+    public function validate() {
+        
+    }
+    
+    private function getAttributesArray() {
+        
+    }
 
 }
 

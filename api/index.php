@@ -14,7 +14,8 @@ $app->get('/user/logincheck', function ($request, $response, $args) {
         "email" => "newvar",
         "password" => "wrongpass",
     ];
-    $user->setAttributes($vars);
+    //$user->setAttributes($vars);
+    $user->getByPk(5);
     $user->save();
     var_dump($user);
     //return $response->write("Hello " . $args['name']);
