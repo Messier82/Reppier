@@ -23,7 +23,15 @@ function initValidate() {
             "email": {
                 required: true,
                 maxlength: 30,
-                email: true
+                email: true,
+                remote: {
+                    url: "./api/user/emailcheck",
+                    type: "post",
+                    dataType: "ajax",
+                    success: function(data) {
+                        return data['status'];
+                    }
+                }
             },
             "password": {
                 required: true,
