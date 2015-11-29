@@ -1,40 +1,40 @@
-{{ Page.hideImageBar(); Page.hideTabsIndicator() }}
-{{ Page.setTitle("Registration"); Page.setNavbarTitle("Registration"); }}
+{{ Page.hideImageBar(); Page.hideTabsIndicator()}}
+{{ Page.setTitle("Registration"); Page.setNavbarTitle("Registration");}}
 
-<div class="card">
-    <div class="card-content row" style="color: black;">
-        <form id="signupForm">
+<div class="card" id="registerCard">
+    <form id="signupForm" ng-submit="register(data)">
+        <div class="card-content row" style="color: black;">
             <div class="col m6 s12 input-field">
-                <input id="first-name" name="first-name" type="text" />
+                <input id="first-name" name="first_name" type="text" ng-model="data.first_name" />
                 <label for="first-name">First name</label>
             </div>
             <div class="col m6 s12 input-field">
-                <input id="last-name" name="last-name" type="text" />
+                <input id="last-name" name="last_name" type="text" ng-model="data.last_name" />
                 <label for="last-name">Last name</label>
             </div>
 
             <div class="col s12 input-field">
-                <input id="email" name="email" type="text" />
+                <input id="email" name="email" type="text" ng-model="data.email" />
                 <label for="email">E-Mail</label>
             </div>
 
             <div class="col m6 s12 input-field">
-                <input id="password" name="password" type="password" />
+                <input id="password" name="password" type="password" ng-model="data.password" />
                 <label for="password">Password</label>
             </div>
 
             <div class="col m6 s12 input-field">
-                <input id="repeat-password" name="repeat-password" type="password" />
+                <input id="repeat-password" name="repeat_password" type="password" />
                 <label for="repeat-password">Repeat password</label>
             </div>
 
             <div class="col s12 input-field">
-                <input id="phone-number" name="phone-number" type="text" />
+                <input id="phone-number" name="phone_number" type="text" ng-model="data.phone_number" />
                 <label for="phone-number">Phone number</label>
             </div>
-        </form>
-    </div>
-    <div class="card-action">
-        <center><a class="blue lighten-1 btn waves-effect waves-light black-text">Register</a></center>
-    </div>
+        </div>
+        <div class="card-action">
+            <center><a class="blue lighten-1 btn waves-effect waves-light black-text" ng-click="register(data)">Register</a></center>
+        </div>
+    </form>
 </div>
