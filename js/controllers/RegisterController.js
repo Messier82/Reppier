@@ -9,7 +9,7 @@ var RegisterController = mainModule.controller("RegisterController",  function (
                 return false;
             }
             $http({
-                url:"http://m82blog.esy.es/api/user/register",
+                url:"http://m82blog.esy.es/user/register",
                 method: 'GET',
                 params: data
             }).success(function(data){
@@ -52,7 +52,7 @@ function initValidate() {
                 maxlength: 30,
                 email: true,
                 remote: {
-                    url: "http://m82blog.esy.es/api/user/check/email",
+                    url: "http://m82blog.esy.es/user/check/email",
                     type: "get"
                 }
             },
@@ -70,7 +70,7 @@ function initValidate() {
                 maxlength: 15,
                 digits: true,
                 remote: {
-                    url: "http://m82blog.esy.es/api/user/check/phone_number",
+                    url: "http://m82blog.esy.es/user/check/phone_number",
                     type: "get"
                 }
             }
