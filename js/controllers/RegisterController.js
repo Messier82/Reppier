@@ -23,6 +23,7 @@ var RegisterController = mainModule.controller("RegisterController",  function (
         };
         $scope.showSuccess = function() {
             $("#registerCard").before("<div class='card green lighten-2 black-text' id='registerSuccessCard'><div class='card-content'><span class='card-title' style='line-height: 1;'><b>Success!</b></span></div></div>");
+            $("#registerCard").remove();
             $("#registerSuccessCard .card-content").append("<div>You have successfully signed up. Now you can sign in!</div>");
         };
         $scope.showError = function(errors) {
