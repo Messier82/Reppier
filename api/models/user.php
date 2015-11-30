@@ -17,7 +17,7 @@ class User extends ActiveRecord\Model {
         ['phone_number', 'within' => [8, 16]]
     ];
 
-    public function checkEmailAvailability($email) {
+    public static function checkEmailAvailability($email) {
         if (!$email) {
             return false;
         }
@@ -28,7 +28,10 @@ class User extends ActiveRecord\Model {
         return true;
     }
 
-    public function checkPhoneNumberAvailability($phoneNumber) {
+    public static function checkPhoneNumberAvailability($phoneNumber) {
+        $config = new Config();
+        $defCountryCode = $config->values['defaultPhoneCountryCode'];
+        $defCountryCodeLength = strlen($defCountryCode);
         if (!$phoneNumber) {
             return false;
         }
@@ -37,14 +40,14 @@ class User extends ActiveRecord\Model {
             return false;
         }
         // Def country code checking
-        if (substr($phoneNumber, 0, 3) != "371") {
-            $phoneNumber = "371" . $phoneNumber;
+        if (substr($phoneNumber, 0, $defCountryCodeLength) != $defCountryCode) {
+            $phoneNumber = $defCountryCode . $phoneNumber;
             $userCount = self::count_by_phone_number($phoneNumber);
             if ($userCount == 1) {
                 return false;
             }
         } else {
-            $phoneNumber = substr($phoneNumber, 3);
+            $phoneNumber = substr($phoneNumber, $defCountryCodeLength);
             $userCount = self::count_by_phone_number($phoneNumber);
             if ($userCount == 1) {
                 return false;

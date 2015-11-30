@@ -1,17 +1,21 @@
 <?php
 
 require 'vendor/autoload.php';
+//Load phpActiveRecord
+require 'php-activerecord/ActiveRecord.php';
+//Load config class
+require 'config.php';
 
 // Create and configure Slim app
 $app = new \Slim\App;
 
-//Load phpActiveRecord
-require 'php-activerecord/ActiveRecord.php';
-
 ActiveRecord\Config::initialize(function($cfg) {
+    $config =  new Config;
+    $dbConfig = $config->database;
+    $connectionString = 'mysql://'.$dbConfig["user"].':'.$dbConfig['pass'].'@'.$dbConfig['host'].'/'.$dbConfig['database'];
     $cfg->set_model_directory('models');
     $cfg->set_connections(array(
-        'development' => 'mysql://root:@localhost/reppier'));
+        'development' => $connectionString));
 });
 
 function jsonRespond($data, $response) {
