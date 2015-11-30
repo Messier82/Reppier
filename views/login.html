@@ -1,28 +1,36 @@
-{{ Page.hideImageBar(); Page.hideTabsIndicator(); }}
-{{ Page.setTitle('Sign in'); Page.setNavbarTitle('Sign in'); }}
+{{ Page.hideImageBar();
+    Page.hideTabsIndicator();
+}}
+{{ Page.setTitle('Sign in');
+    Page.setNavbarTitle('Sign in');
+}}
 
 <div class="row">
     <div class="col l8 offset-l2 m10 offset-m1 s12" style="padding: 0;">
         <div class="card">
-            <div class="card-content">
-                <div class="input-field">
-                    <input type="text" id="email" />
-                    <label for="email">E-Mail</label>
+            <form id="signinForm" ng-submit="login(data)">
+                <div class="card-content row" style="padding-bottom: 0;">
+                    <div class="input-field col s12">
+                        <input type="text" id="email" name="email" ng-model="data.email" />
+                        <label for="email">E-Mail</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" id="password" name="password" ng-model="data.password" />
+                        <label for="password">Password</label>
+                        <a>Forgot your password?</a><br />
+                    </div>
+                    <div class="col s12" style="padding-bottom: 0;">
+                        <input type="checkbox" id="remember" />
+                        <label for="remember">Remember</label>
+                    </div>
                 </div>
-                <div class="input-field">
-                    <input type="text" id="password" />
-                    <label for="email">Password</label>
-                    <a>Forgot your password?</a><br />
+                <div class="card-action" style="overflow: hidden;">
+                    <center>
+                        Don't have an account? <a href="#register">Sign up!</a><Br />
+                        <a class="blue lighten-1 black-text btn waves-effect waves-light" ng-click="login(data)">Sign in</a>
+                    </center> 
                 </div>
-                <input type="checkbox" id="remember" />
-                <label for="remember">Remember</label>
-            </div>
-            <div class="card-action" style="overflow: hidden;">
-                <center>
-                    Don't have an account? <a href="#register">Sign up!</a><Br />
-                    <a class="blue lighten-1 black-text btn waves-effect waves-light">Sign in</a>
-                </center> 
-            </div>
+            </form>
         </div>
     </div>
 </div>

@@ -22,7 +22,7 @@ class User extends ActiveRecord\Model {
             return false;
         }
         $userCount = self::count_by_email($email);
-        if ($userCount == 1) {
+        if ($userCount >= 1) {
             return false;
         }
         return true;
@@ -36,20 +36,20 @@ class User extends ActiveRecord\Model {
             return false;
         }
         $userCount = self::count_by_phone_number($phoneNumber);
-        if ($userCount == 1) {
+        if ($userCount >= 1) {
             return false;
         }
         // Def country code checking
         if (substr($phoneNumber, 0, $defCountryCodeLength) != $defCountryCode) {
             $phoneNumber = $defCountryCode . $phoneNumber;
             $userCount = self::count_by_phone_number($phoneNumber);
-            if ($userCount == 1) {
+            if ($userCount >= 1) {
                 return false;
             }
         } else {
             $phoneNumber = substr($phoneNumber, $defCountryCodeLength);
             $userCount = self::count_by_phone_number($phoneNumber);
-            if ($userCount == 1) {
+            if ($userCount >= 1) {
                 return false;
             }
         }
@@ -60,7 +60,16 @@ class User extends ActiveRecord\Model {
         $user = new self();
         $registerData = $user->parseRegisterDataFromGET();
         $user->set_attributes($registerData);
-        $user->save(true);
+        $user->is_invalid();
+        if (!self::checkEmailAvailability($registerData['email'])) {
+            $user->errors->add("email", "is already taken");
+        }
+        if (!self::checkPhoneNumberAvailability($registerData['phone_number'])) {
+            $user->errors->add("phone_number", "is already taken");
+        }
+        if (!$user->errors->is_empty()) {
+            $user->save(false);
+        }
         return $user->formatRegisterJsonAnswer();
     }
 
@@ -71,15 +80,36 @@ class User extends ActiveRecord\Model {
             "email" => filter_input(INPUT_GET, "email", FILTER_SANITIZE_EMAIL),
             "password" => password_hash(filter_input(INPUT_GET, "password", FILTER_UNSAFE_RAW), PASSWORD_DEFAULT),
             "phone_number" => filter_input(INPUT_GET, "phone_number", FILTER_SANITIZE_NUMBER_INT)
-       ];
-       return $output;
+        ];
+        return $output;
     }
-    
+
     private function formatRegisterJsonAnswer() {
-        if($this->errors->is_empty()) {
+        if ($this->errors->is_empty()) {
             return json_encode(['status' => 'success']);
         }
-        return json_encode(['status' => 'error', 'errors' => $this->errors->full_messages()]); 
-   }
+        return json_encode(['status' => 'error', 'errors' => $this->errors->full_messages()]);
+    }
+    
+    public static function login() {
+        $email = filter_input(INPUT_GET, "email", FILTER_VALIDATE_EMAIL);
+        if(!$email) {
+            return false;
+        }
+        $password = filter_input(INPUT_GET, "password", FILTER_UNSAFE_RAW);
+        if(!$password) {
+            return false;
+        }
+        $user = self::find_by_email($email);
+        if(!$user) {
+            return false;
+        }
+        $passwordCheck = password_verify($password, $user->password);
+        if(!$passwordCheck) {
+            return false;
+        }
+        $session = Session::start($user);
+        var_dump($session);
+    }
 
 }

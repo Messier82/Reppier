@@ -32,10 +32,10 @@ var RegisterController = mainModule.controller("RegisterController",  function (
                 $("#registerErrorCard .card-content").append("<li>" + value + "</li>");
             });
         };
-        initValidate();
+        initRegisterValidate();
     });
 
-function initValidate() {
+function initRegisterValidate() {
     $("#signupForm").validate({
         rules: {
             "first_name": {
@@ -60,6 +60,7 @@ function initValidate() {
             "password": {
                 required: true,
                 minlength: 6,
+                maxlength: 50
             },
             "repeat_password": {
                 required: true,

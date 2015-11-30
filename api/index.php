@@ -52,5 +52,10 @@ $app->get("/user/register", function($request, $response, $args) {
     return $response->write(User::register());
 });
 
+//User login
+$app->get("/user/login", function($request, $response, $args) {
+    return $response->write(User::login());
+});
+
 // Run app
 $app->run();
