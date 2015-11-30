@@ -36,8 +36,15 @@ class User extends ActiveRecord\Model {
         if ($userCount == 1) {
             return false;
         }
+        // Def country code checking
         if (substr($phoneNumber, 0, 3) != "371") {
             $phoneNumber = "371" . $phoneNumber;
+            $userCount = self::count_by_phone_number($phoneNumber);
+            if ($userCount == 1) {
+                return false;
+            }
+        } else {
+            $phoneNumber = substr($phoneNumber, 3);
             $userCount = self::count_by_phone_number($phoneNumber);
             if ($userCount == 1) {
                 return false;
