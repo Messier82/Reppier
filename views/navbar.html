@@ -5,22 +5,16 @@
             {{ Page.navbarTitle() }}
         </div>
 
-        <div class="right accountPanel">
-            <a href="#login" class="waves-effect waves-default btn white black-text">Sign in</a>
+        <div class="right accountPanel" ng-controller="LoginController" ng-switch on="Session.logged()">
+            <div id="notlogged" ng-switch-default>
+                <a href="#login" class="waves-effect waves-default btn white black-text">Sign in</a>
+            </div>
+            <div id="logged" ng-switch-when="true">
+                {{ Session.session_id }}
+            </div>
         </div>
     </div>
 </nav>
-
-<style>
-    @media screen and (max-width: 600px) {
-        div.accountPanel div.phones {
-            display: block !important;
-        }
-        div.accountPanel div.tabletDesktop {
-            display: none;
-        }
-    }
-</style>
 
 <script>
     $('.dropdown-button').dropdown();

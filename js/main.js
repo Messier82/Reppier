@@ -7,7 +7,7 @@
 //And I made this, cuz GitHub Pages does not support htaccess files :/
 var removeHashtagFromUrl = false;
 
-var mainModule = angular.module('Reppier', ['ngRoute', 'angular-loading-bar', 'ngAnimate']);
+var mainModule = angular.module('Reppier', ['ngRoute', 'angular-loading-bar', 'ngCookies']);
 
 mainModule.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
     $routeProvider

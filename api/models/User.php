@@ -109,7 +109,9 @@ class User extends ActiveRecord\Model {
             return false;
         }
         $session = Session::start($user);
-        var_dump($session);
+        if(!$session) {
+            return false;
+        }
+        return $session->id;
     }
-
 }

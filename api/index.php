@@ -54,7 +54,21 @@ $app->get("/user/register", function($request, $response, $args) {
 
 //User login
 $app->get("/user/login", function($request, $response, $args) {
-    return $response->write(User::login());
+    $answer = [];
+    $login = User::login();
+    if($login === false) {
+        $answer['status'] = 'error';
+    } else {
+        $answer['status'] = 'success';
+        $answer['session_id'] = $login;
+    }
+    return $response->write(json_encode($answer));
+});
+
+//Logged check
+$app->get("/user/logged", function($request, $response, $args) {
+    $session_id = filter_input(INPUT_GET, "session_id", FILTER_UNSAFE_RAW);
+    return $response->write("lal");
 });
 
 // Run app

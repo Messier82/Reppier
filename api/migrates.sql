@@ -11,7 +11,7 @@ CREATE TABLE users(
 
 DROP TABLE sessions;
 CREATE TABLE sessions(
-	id varchar(20) NOT NULL,
+	id varchar(32) NOT NULL,
 	user_id int NOT NULL,
 	ip_address varchar(15) NOT NULL,
 	start_time datetime NOT NULL,
