@@ -24,17 +24,13 @@ class Session extends ActiveRecord\Model {
 
     public function start($userObj) {
         $ip = self::get_client_ip();
-        //check if there already exsists session for current ip address
-        $session = self::find_by_ip_address($ip);
-        if(!$session) {
-            $session = new self();
-        }
+        $session = new self();
         $session->user_id = $userObj->id;
         $session->ip_address = $ip;
-        $timestamp = time(); // used for session id forming, along with IP and user ID
-        $session->start_time = $timestamp;
-        $session->last_activity = $timestamp;
-        $hashString = $session->user_id . $session->ip_address . $timestamp; // generating session id
+//        $timestamp = time(); // used for session id forming, along with IP and user ID
+        $session->start_time = time();
+        $session->last_activity = time();
+        $hashString = $session->user_id . $session->ip_address . time(); // generating session id
         $session->id = md5($hashString);
         $session->remember = filter_input(INPUT_GET, 'remember', FILTER_VALIDATE_BOOLEAN);
         $status = $session->save();

@@ -15,5 +15,6 @@ CREATE TABLE sessions(
 	user_id int NOT NULL,
 	ip_address varchar(15) NOT NULL,
 	start_time datetime NOT NULL,
-	last_activity datetime NOT NULL
+	last_activity datetime NOT NULL,
+        remember boolean NOT NULL
 ) ENGINE = INNODB;

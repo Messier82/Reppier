@@ -67,7 +67,7 @@ class User extends ActiveRecord\Model {
         if (!self::checkPhoneNumberAvailability($registerData['phone_number'])) {
             $user->errors->add("phone_number", "is already taken");
         }
-        if (!$user->errors->is_empty()) {
+        if ($user->errors->is_empty()) {
             $user->save(false);
         }
         return $user->formatRegisterJsonAnswer();
@@ -94,18 +94,22 @@ class User extends ActiveRecord\Model {
     public static function login() {
         $email = filter_input(INPUT_GET, "email", FILTER_VALIDATE_EMAIL);
         if(!$email) {
+            echo "memes_email";
             return false;
         }
         $password = filter_input(INPUT_GET, "password", FILTER_UNSAFE_RAW);
         if(!$password) {
+            echo "memes_password";
             return false;
         }
         $user = self::find_by_email($email);
         if(!$user) {
+            echo "memes_findemail" . $email;
             return false;
         }
         $passwordCheck = password_verify($password, $user->password);
         if(!$passwordCheck) {
+            echo "memes_passwordcheck";
             return false;
         }
         $session = Session::start($user);
