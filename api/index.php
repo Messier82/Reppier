@@ -68,7 +68,10 @@ $app->get("/user/login", function($request, $response, $args) {
 //Logged check
 $app->get("/user/logged", function($request, $response, $args) {
     $session_id = filter_input(INPUT_GET, "session_id", FILTER_UNSAFE_RAW);
-    return $response->write("lal");
+    $session = Session::find_by_id($session_id);
+    return jsonRespond([
+        "logged"  => ($session ? $session->id : false)
+    ], $response);
 });
 
 // Run app

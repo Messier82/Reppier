@@ -68,10 +68,10 @@ function initLoginValidate() {
 mainModule.factory("Login", function () {
     return {
         showSigninButton: function () {
-            $(".accountPanel").css({"opacity": "1", "visibility": "visible"});
+            $(".accountPanel .notlogged").css({"opacity": "1", "visibility": "visible"});
         },
         hideSigninButton: function () {
-            $(".accountPanel").css({"opacity": "0", "visibility": "hidden"});
+            $(".accountPanel .notlogged").css({"opacity": "0", "visibility": "hidden"});
         }
     };
 });

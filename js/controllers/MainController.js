@@ -43,9 +43,10 @@ mainModule.factory('Page', function () {
     };
 });
 
-var MainController = mainModule.controller('MainController', ['$scope', 'Page',
-    function ($scope, Page) {
+var MainController = mainModule.controller('MainController', ['$scope', 'Page', 'Session', 
+    function ($scope, Page, Session) {
         $scope.Page = Page;
+        $scope.Session = Session;
     }]);
 
 MainController.directive("navBar", function () {
