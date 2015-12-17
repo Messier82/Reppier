@@ -9,12 +9,14 @@ mainModule.factory("Session", function ($http, $cookies, $q) {
         sessionId: sessionId,
         bLogged: bLogged,
         isLogged: function () {
-            if (sessionId !== null) {
-                return true;
+            this.updateSessionId();
+            if (this.sessionId !== null) {
+                return;
             }
             this.updateSession();
         },
         updateSession: function () {
+            var s = this;
             sessionId = $cookies.get("session_id");
             var data = {'session_id': sessionId};
             var defer = $q.defer();
@@ -24,13 +26,17 @@ mainModule.factory("Session", function ($http, $cookies, $q) {
                 params: data
             }).then(function (response) {
                 var data = response.data;
-                sessionId = (data.logged) ? data.logged : false;
-                if (sessionId) {
-                    $cookies.put("session_id", sessionId);
+                s.sessionId = (data.logged) ? data.logged : null;
+                if (s.sessionId) {
+                    $cookies.put("session_id", s.sessionId);
                 }
+                s.bLogged = (data.logged) ? true : false;
                 defer.resolve((data.logged) ? true : false);
             });
             return defer.promise;
+        },
+        updateSessionId: function() {
+            this.sessionId = $cookies.get("session_id");
         }
     }
 });

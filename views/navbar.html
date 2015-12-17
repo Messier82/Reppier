@@ -5,12 +5,14 @@
             {{ Page.navbarTitle() }}
         </div>
         {{ Session.isLogged() }}
+        {{ Session.bLogged }}
         <div class="right accountPanel" ng-controller="LoginController" ng-switch on="Session.bLogged">
             <div id="notlogged" ng-switch-default>
                 <a href="#login" class="waves-effect waves-default btn white black-text">Sign in</a>
             </div>
             <div id="logged" ng-switch-when="true">
                 {{ Session.sessionId }}
+                <a class="waves-effect waves-default btn white black-text" ng-click="logout()">Logout</a>
             </div>
         </div>
     </div>

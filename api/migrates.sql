@@ -1,4 +1,4 @@
-DROP TABLE users;
+DROP TABLE IF EXISTS users;
 CREATE TABLE users(
   id int NOT NULL AUTO_INCREMENT,
   email varchar(30) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE users(
   PRIMARY KEY(id)
 ) ENGINE = INNODB;
 
-DROP TABLE sessions;
+DROP TABLE IF EXISTS sessions;
 CREATE TABLE sessions(
 	id varchar(32) NOT NULL PRIMARY KEY,
 	user_id int NOT NULL,
