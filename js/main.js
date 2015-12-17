@@ -10,28 +10,32 @@ var removeHashtagFromUrl = false;
 var mainModule = angular.module('Reppier', ['ngRoute', 'angular-loading-bar', 'ngCookies']);
 
 mainModule.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
-    $routeProvider
-            .when("/", {
-                redirectTo: "/home"
-            })
-            .when("/home", {
-                templateUrl: "./views/home.html"
-            })
-            .when("/register", {
-                templateUrl: "./views/register.html",
-                controller: "RegisterController"
-            })
-            .when("/login", {
-                templateUrl: "./views/login.html",
-                controller: "LoginController"
+        $routeProvider
+                .when("/", {
+                    redirectTo: "/home"
+                })
+                .when("/home", {
+                    templateUrl: "./views/home.html"
+                })
+                .when("/register", {
+                    templateUrl: "./views/register.html",
+                    controller: "RegisterController"
+                })
+                .when("/login", {
+                    templateUrl: "./views/login.html",
+                    controller: "LoginController"
+                })
+                .when("/ticket/add", {
+                    templateUrl: "./views/ticket/add.html",
+                    controller: "TicketController"
+                });
+        if (window.history && window.history.pushState && removeHashtagFromUrl) {
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
             });
-    if (window.history && window.history.pushState && removeHashtagFromUrl) {
-        $locationProvider.html5Mode({
-            enabled: true,
-            requireBase: false
-        });
-    }
-}]);
+        }
+    }]);
 
 mainModule.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
         cfpLoadingBarProvider.includeBar = false;

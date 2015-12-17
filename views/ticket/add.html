@@ -1,0 +1,34 @@
+{{ Page.hideImageBar(); Page.hideTabsIndicator()}}
+{{ Page.setTitle("Add ticket"); Page.setNavbarTitle("Add ticket"); }}
+<div class="card" id="ticketCard">
+    <div class="card-content row">
+        <div class="col l6 m12 input-field">
+            <select>
+                <option value="" disabled selected>Please select...</option>
+                <option>Test</option>
+                <option>Test</option>
+                <option>Test</option>
+                <option>Test</option>
+            </select>
+            <label>Device manufacturer</label>
+        </div>
+        <div class="col l6 m12 input-field">
+            <select>
+                <option value="" disabled selected>Please select...</option>
+                <option>Test</option>
+                <option>Test</option>
+                <option>Test</option>
+                <option>Test</option>
+            </select>
+            <label>Device model</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Describe your problem</label>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("select").material_select();
+</script>

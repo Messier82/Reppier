@@ -9,10 +9,12 @@ mainModule.factory("Session", function ($http, $cookies, $q) {
         sessionId: sessionId,
         bLogged: bLogged,
         isLogged: function () {
-            this.updateSessionId();
+//            this.updateSessionId();
             if (this.sessionId !== null) {
+//                this.updateSessionId();
                 return;
             }
+            this.updateSessionId();
             this.updateSession();
         },
         updateSession: function () {
@@ -26,7 +28,7 @@ mainModule.factory("Session", function ($http, $cookies, $q) {
                 params: data
             }).then(function (response) {
                 var data = response.data;
-                s.sessionId = (data.logged) ? data.logged : null;
+                s.sessionId = (data.logged) ? data.logged : false;
                 if (s.sessionId) {
                     $cookies.put("session_id", s.sessionId);
                 }

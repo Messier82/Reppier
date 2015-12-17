@@ -1,23 +1,28 @@
+{{ Session.isLogged()}}
 <nav class="blue">
     <div class="col l8 offset-l2 m10 offset-m1 s12">
         <div class="left currentPage">
             <!--Reppier-->
-            {{ Page.navbarTitle() }}
+            {{ Page.navbarTitle()}}
         </div>
-        {{ Session.isLogged() }}
-        {{ Session.bLogged }}
         <div class="right accountPanel" ng-controller="LoginController" ng-switch on="Session.bLogged">
             <div id="notlogged" ng-switch-default>
                 <a href="#login" class="waves-effect waves-default btn white black-text">Sign in</a>
             </div>
-            <div id="logged" ng-switch-when="true">
-                {{ Session.sessionId }}
-                <a class="waves-effect waves-default btn white black-text" ng-click="logout()">Logout</a>
+            <div id="logged" ng-switch-when="true" ng-controller="UserController">
+                <a class="dropdown-button waves-effect waves-light blue lighten-1 btn-flat black-text" data-activates="user-dropdown">
+                    {{ data.first_name}} {{ data.last_name}}
+                </a>
+                <ul id="user-dropdown" class="dropdown-content">
+                    <li><a href="#ticket/add">New ticket</a></li>
+                    <li><a>View tickets</a></li>
+                    <li class="divider"></li>
+                    <li><a ng-click="logout()">Logout</a></li>
+                </ul>
+                <script>
+                    $('.dropdown-button').dropdown({});
+                </script>
             </div>
         </div>
     </div>
 </nav>
-
-<script>
-    $('.dropdown-button').dropdown();
-</script>

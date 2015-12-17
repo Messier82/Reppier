@@ -27,7 +27,6 @@ class Session extends ActiveRecord\Model {
         $session = new self();
         $session->user_id = $userObj->id;
         $session->ip_address = $ip;
-//        $timestamp = time(); // used for session id forming, along with IP and user ID
         $session->start_time = time();
         $session->last_activity = time();
         $hashString = $session->user_id . $session->ip_address . time(); // generating session id
@@ -38,6 +37,24 @@ class Session extends ActiveRecord\Model {
             return false;
         }
         return $session;
+   }
+   
+   public function get_user_data($sessionId) {
+       $session = self::find_by_id($sessionId);
+       if(!$session) {
+           return false;
+       }
+       $user = User::find_by_id($session->user_id);
+       if(!$user)  {
+           return false;
+       }
+       return [
+           "id" => $user->id,
+           "first_name" => $user->first_name,
+           "last_name" => $user->last_name,
+           "email" => $user->email,
+           "phone_number" => $user->phone_number
+       ];
    }
 
 }

@@ -74,5 +74,21 @@ $app->get("/user/logged", function($request, $response, $args) {
     ], $response);
 });
 
+//Get userdata from session
+$app->get("/user/getdata", function($request, $response, $args){
+    $sessionId = filter_input(INPUT_GET, "session_id", FILTER_UNSAFE_RAW);
+    $data = Session::get_user_data($sessionId);
+    if($data) {
+        return jsonRespond([
+            "status" => "success",
+            "data" => $data
+        ], $response);
+    } else {
+        return jsonRespond([
+            "status" => "error"
+        ], $response);
+    }
+});
+
 // Run app
 $app->run();
