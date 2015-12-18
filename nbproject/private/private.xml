@@ -5,11 +5,13 @@
         <group>
             <file>file:/C:/OpenServer/domains/Reppier/index.html</file>
             <file>file:/C:/OpenServer/domains/Reppier/js/controllers/UserController.js</file>
-            <file>file:/C:/OpenServer/domains/Reppier/js/services/SessionService.js</file>
-            <file>file:/C:/OpenServer/domains/Reppier/api/models/Session.php</file>
+            <file>file:/C:/OpenServer/domains/Reppier/js/controllers/TicketController.js</file>
+            <file>file:/C:/OpenServer/domains/Reppier/views/register.html</file>
             <file>file:/C:/OpenServer/domains/Reppier/api/index.php</file>
             <file>file:/C:/OpenServer/domains/Reppier/js/controllers/LoginController.js</file>
             <file>file:/C:/OpenServer/domains/Reppier/views/navbar.html</file>
+            <file>file:/C:/OpenServer/domains/Reppier/views/ticket/add.html</file>
+            <file>file:/C:/OpenServer/domains/Reppier/api/migrates.sql</file>
             <file>file:/C:/OpenServer/domains/Reppier/js/main.js</file>
             <file>file:/C:/OpenServer/domains/Reppier/js/controllers/MainController.js</file>
         </group>

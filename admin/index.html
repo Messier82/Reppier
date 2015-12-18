@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="ReppierAdmin" ng-controller="MainController">
+    <head>
+        <title>{{ Page.title }}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link type="text/css" rel="stylesheet" href="./../materialize/css/materialize.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="./../css/loading-bar.css" />
+
+        <link type="text/css" rel="stylesheet" href="./../css/loading-spinner.css" />
+        <link type="text/css" rel="stylesheet" href="./css/style.css" />
+
+        <script src="./../js/jquery-2.1.4.min.js"></script>
+        <script src="./../js/angular.min.js"></script>
+        <script src="./../js/angular-route.min.js"></script>
+        <script src="../js/angular-ui-router.min.js"></script>
+        <script src="./../js/angular-cookies.js"></script>
+        <script src="./../js/loading-bar.js"></script>
+        <script src="./../materialize/js/materialize.js"></script>
+        <script src="./../js/jquery.validate.js"></script>
+
+        <script src="./js/main.js"></script>
+    </head>
+    <body class="grey lighten-2">
+
+        <nav class="blue">
+            <div class="side-nav fixed" id="sideNav">
+                <div id="profilePanel" style="height:64px;line-height: 64px;border-bottom: 1px solid #ddd;">
+                    <div id='mainLogo' style='display:inline-block;'></div>
+                    <span style='font-weight: 200;font-size: 49px;color:black;'>LECTRA</span>
+                </div>
+
+                <a class="navButton waves-effect waves-pink btn-flat" id="sideNav-news"><i class="small mdi-action-subject left"></i>Новости</a>
+            </div>
+            <header>
+                <div class="nav-wrapper">
+                    <a href="#" data-activates="sideNav" class="button-collapse" style="padding-left: 10px;"><i class="material-icons small">menu</i></a>
+                    <span class="brand-logo" style="padding-left:5px;font-size: 20px;">{{ Page.navbarTitle }}</span>
+
+                </div>
+            </header>
+        </nav>
+
+        <script>
+                    $(".button-collapse").sideNav();
+        </script>
+
+        <!--Angular dependecies-->
+        <!--Controllers-->
+        <script src="./js/controllers/MainController.js"></script>
+
+        <!--Service-->
+
+    </body>
+</html>

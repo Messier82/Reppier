@@ -1,0 +1,118 @@
+/*
+Reppier management system
+Design and code - M82.eu
+*/
+/* 
+    Created on : 06.11.2015, 7:39:30
+    Author     : Messier82
+*/
+body {
+    /*height: 1500px; just for testing*/
+}
+
+//MD icons sizes
+.material-icons.tiny {
+    font-size: 1rem;
+}
+.material-icons.small {
+    font-size: 2rem;
+}
+.material-icons.medium {
+    font-size: 3rem;
+}
+.material-icons.large {
+    font-size: 4rem;
+}
+
+/*Styles*/
+.subNav {
+    height: 36px;
+}
+
+/*Basic styles*/
+.projectTitle {
+    font-weight: 200;
+}
+
+.currentPage {
+    font-size: 1.4rem;
+}
+
+/*Tabs indicator coloring*/
+ul.tabs div.indicator {
+    background: white;
+    transition: opacity .3s;
+}
+
+/*Checkbox galochka coloring*/
+[type="checkbox"]:checked + label:before {
+    border-right-color: #42a5f5;
+    border-bottom-color: #42a5f5;
+}
+
+/*Inputs coloring*/
+input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom-color: #42a5f5;
+}
+
+input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=url]:focus:not([readonly]) + label, input[type=time]:focus:not([readonly]) + label, input[type=date]:focus:not([readonly]) + label, input[type=datetime-local]:focus:not([readonly]) + label, input[type=tel]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label, input[type=search]:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #42a5f5;
+}
+
+/*Loading spinner positioning and stylizing*/
+.loading-bar-spinner {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    margin-left: -15px;
+    padding: 5px;
+    border-radius: 20px;
+    background: white;
+    height: 40px;
+    -webkit-transition: 350ms linear all;
+    -moz-transition: 350ms linear all;
+    -o-transition: 350ms linear all;
+    transition: 350ms linear all;
+}
+
+/*Loading spinner animation transitions*/
+#loading-bar-spinner.ng-enter,
+#loading-bar-spinner.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+#loading-bar-spinner.ng-enter.ng-enter-active,
+#loading-bar-spinner.ng-leave {
+    opacity: 1;
+}
+
+
+/*Account panel*/
+.accountPanel {
+    transition: opacity .3s;
+}
+
+/*Input labels fix*/
+.input-field label {
+    width: 100%;
+}
+
+header, main, footer {
+    padding-left: 240px;
+}
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+    .brand-logo {
+        left: 70px !important;
+    }
+}
+
+@media only screen and (max-width : 600px) {
+    #profilePanel {
+        height: 56px !important;
+        line-height: 56px !important;
+    }
+}

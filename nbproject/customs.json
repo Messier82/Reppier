@@ -9,5 +9,7 @@
         "style": {},
         "register-form": {}
     },
-    "attributes": {}
+    "attributes": {
+        "ui-view": {}
+    }
 }
