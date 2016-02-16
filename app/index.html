@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="Reppier" ng-controller="MainController">
+<head>
+  <title>{{ Page.title()}}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+  <link rel="stylesheet" href="bower_components/materialize/bin/materialize.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link type="text/css" rel="stylesheet" href="styles/loading-spinner.css" />
+  <link type="text/css" rel="stylesheet" href="styles/style.css" />
+  <!-- endbuild -->
+</head>
+<body class="grey lighten-2">
+
+<header>
+  <div class="row z-depth-1" style="margin-bottom: 0;">
+    <nav-bar class="navBar"></nav-bar>
+    <menu-bar></menu-bar>
+  </div>
+</header>
+
+<div class="parallax-container" id="imageBar">
+  <div class="parallax"><img src="images/background-min2.jpg" /></div>
+</div>
+<div class="row" style="margin-top: -80px;" id="content">
+  <div class="col l8 offset-l2 m10 offset-m1 s12">
+    <ng-view></ng-view>
+  </div>
+</div>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+<script src="bower_components/materialize/bin/materialize.js"></script>
+<script src="bower_components/angular-materialize/src/angular-materialize.js"></script>
+<script src="bower_components/jquery-validation/dist/jquery.validate.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/main.js"></script>
+<script src="scripts/controllers/MainController.js"></script>
+<script src="scripts/controllers/RegisterController.js"></script>
+<script src="scripts/controllers/MenuBarController.js"></script>
+<script src="scripts/controllers/LoginController.js"></script>
+<script src="scripts/controllers/UserController.js"></script>
+<script src="scripts/controllers/TicketController.js"></script>
+<script src="scripts/services/SessionService.js"></script>
+<!-- endbuild -->
+</body>
+</html>

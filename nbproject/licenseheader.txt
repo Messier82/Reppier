@@ -1,8 +1,0 @@
-<#if licenseFirst??>
-${licenseFirst}
-</#if>
-${licensePrefix}Reppier management system
-${licensePrefix}Design and code - M82.eu
-<#if licenseLast??>
-${licenseLast}
-</#if>
